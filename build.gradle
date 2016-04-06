@@ -1,10 +1,6 @@
 apply plugin: 'idea'
-apply from: 'gradle/credentials.gradle'
 apply from: 'gradle/compile.gradle'
 apply from: 'gradle/publishing.gradle'
-apply from: 'gradle/bintray.gradle'
-apply from: 'gradle/artifactory.gradle'
-apply from: 'gradle/ci.gradle'
 
 buildscript {
     repositories {
@@ -44,10 +40,10 @@ ext {
 defaultTasks 'clean', 'build'
 
 
-task release {
-    description = "Releases a version of the plugin on Artifactory and Bintray"
-    dependsOn artifactoryPublish, bintrayUpload
-}
+//task release {
+//    description = "Releases a version of the plugin on Artifactory and Bintray"
+//    dependsOn artifactoryPublish, bintrayUpload
+//}
 
 test {
     testLogging {
